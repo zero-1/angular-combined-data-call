@@ -1,0 +1,25 @@
+
+  <div>
+    <table *ngIf="combinedDataProvider">
+      <tr *ngFor="let item of combinedDataProvider">
+        <td>{{item.id}}</td>
+        <td>{{item.title}}</td>
+        <td>{{item.userId}}</td>
+        <td>{{item.completed}}</td>
+      </tr> 
+    </table>
+  </div>
+
+<br>
+
+  <div>
+    <table *ngIf="forkJoinedDataProvider">
+      <tr *ngFor="let item of forkJoinedDataProvider">
+        <td>{{item.id}}</td>
+        <td>{{item.title}}</td>
+        <td>{{item.userId}}</td>
+        <td>{{item.completed}}</td>
+      </tr> 
+    </table>
+  </div>
+ 
