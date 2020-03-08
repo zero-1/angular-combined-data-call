@@ -25,6 +25,8 @@ export class TableComponent implements OnInit, OnDestroy {
 
   subs: Subscription;
 
+  dynamicQuery$: Array<Observable<any>>;
+  
   ngOnInit() {
 
   this.dataProvider1$ = this.dataService.getDataOne();
@@ -52,6 +54,22 @@ export class TableComponent implements OnInit, OnDestroy {
       this.postsWithUsers = value;
      console.log(value);  //update here
     });
+
+
+// way to combine unknown number of calls 
+/*
+  this.dynamicQuery$ = [1,2,3,4].map(id => {  
+      return this.dataService.getDataById(id);
+    });
+  combineLatest(this.dynamicQuery$).subscribe(result => {
+      console.log('resultL::', result)
+    })  
+
+*/
+
+
+
+
 
   }
 
